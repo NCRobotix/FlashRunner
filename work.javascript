@@ -73,7 +73,6 @@ function moveleft() {
 function moveright() {
   myGamePiece.speedX += 1;
 }
-</script>
 
 function stopMove() {
   myGamePiece.speedX = 0;
