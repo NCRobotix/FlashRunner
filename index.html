@@ -12,7 +12,14 @@
     </div>
     <div>
       <p>click in the window<br/>press up arrow (<span>&uarr;</span>) to start</p>
+      <input id="StartButton" type="button" value="Start"/>
     </div>
   </div>
+  <script>
+    $("#StartButton").click(function () {
+        $("#SplashScreen").hide();
+        $("#GameCanvas").show();
+    });*
+  </script>
   </body>
 </html>
