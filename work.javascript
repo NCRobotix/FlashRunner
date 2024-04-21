@@ -67,8 +67,6 @@ function updateGameArea() {
   if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 1; }
   if (myGameArea.key && myGameArea.key == 38) {myGamePiece.speedY = -1; }
   if (myGameArea.key && myGameArea.key == 40) {myGamePiece.speedY = 1; }
-  myUpBtn = new component(30, 30, "blue", 50, 10);
-  myDownBtn = new component(30, 30, "blue", 50, 70);
   myLeftBtn = new component(30, 30, "blue", 20, 40);
   myRightBtn = new component(30, 30, "blue", 80, 40); 
   myGamePiece.newPos();
