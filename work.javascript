@@ -55,22 +55,37 @@ function everyinterval(n) {
 
 var myGamePiece;
 var myObstacles[];
+var myScore;
+var myBackground;
+var img = document.createElement("img");
+img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
+var src = document.getElementById("header");
+src.appendChild(img);
 
 function startGame() {
   myGamePiece = new component(30, 30, "red", 10, 120);
+  myBackground = new component(656, 270, "citymarket.jpg", 0, 0, "image");
   myObstacle = new component(10, 200, "green", 300, 120); 
+  myScore = new component("30px", "Consolas", "black", 280, 40, "text");
   myGameArea.start();
 }
 
-function component(width, height, color, x, y) {
+function component(width, height, color, x, y, type) {
+  this.type = type;
   this.width = width;
   this.height = height;
   this.speedX = 0;
   this.speedY = 0;
   this.update = function(){
     ctx = myGameArea.context;
-    ctx.fillStyle = color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    if (this.type == "text") {
+      ctx.font = this.width + " " + this.height;
+      ctx.fillStyle = color;
+      ctx.fillText(this.text, this.x, this.y);
+    }
+    else {
+      ctx.fillStyle = color;
+      ctx.fillRect(this.x, this.y, this.width, this.height);
   }
   this.clicked = function() {
     var myleft = this.x;
@@ -115,6 +130,11 @@ function updateGameArea() {
       return;
     }
   }
+  myGameArea.clear();
+  myBackground.speedX = -1; 
+  myBackground.newPos();
+  myBackground.update();
+  myGameArea.frameNo += 1;
   if (myGameArea.frameNo == 1 || everyinterval(150)) {
     y = myGameArea.canvas.height;
     minWidth = 20;
@@ -126,8 +146,6 @@ function updateGameArea() {
     myObstacles.push(new component(10, width, "green", y, 0));
     myObstacles.push(new component(10, y - width - gap, "green", y, width + gap));
   }
-  myGameArea.clear();
-  myGameArea.frameNo += 1;
   for (i = 0; i < myObstacles.length; i += 1) {
     myObstacles[i].y += -1;
     myObstacles[i].update();
@@ -150,7 +168,8 @@ function updateGameArea() {
     myRightBtn.update(); 
     myLeftBtn = new component(30, 30, "blue", 20, 40);
     myRightBtn = new component(30, 30, "blue", 80, 40); 
-    myObstacle.update();
+    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
   }
