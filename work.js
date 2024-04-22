@@ -3,7 +3,7 @@ window.addEventListener("keyup", ev => {
     //YOUR CODE HERE
     
     //example below
-    document.body.innerHTML = "<h1 id='gameOn'>GAME ON!!!</h1>"
+    document.body.innerHTML = "<h1 id='gameOn'>GAME ON!</h1>"
   }
 });
 
