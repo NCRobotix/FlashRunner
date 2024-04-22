@@ -57,6 +57,8 @@ var myGamePiece;
 var myObstacles[];
 var myScore;
 var myBackground;
+var mySound;
+var myThemeMusic;
 var img = document.createElement("img");
 img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
 var src = document.getElementById("header");
@@ -64,9 +66,12 @@ src.appendChild(img);
 
 function startGame() {
   myGamePiece = new component(30, 30, "red", 10, 120);
+  mySound = new sound("bounce.mp3");
   myBackground = new component(656, 270, "citymarket.jpg", 0, 0, "image");
   myObstacle = new component(10, 200, "green", 300, 120); 
   myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+  myThemeMusic = new sound("gametheme.mp3");
+  myThemeMusic.play();
   myGameArea.start();
 }
 
@@ -126,6 +131,7 @@ function updateGameArea() {
   var width, y, gap, minHeight, maxHeight, minGap, maxGap;
   for (i = 0; i < myObstacles.length; i += 1) {
     if (myGamePiece.crashWith(myObstacles[i])) {
+      mySound.play();
       myGameArea.stop();
       return;
     }
@@ -195,6 +201,21 @@ function stopMove() {
   myGamePiece.speedX = 0;
   myGamePiece.speedY = 0;
 }
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+} 
 </script>
 
 
