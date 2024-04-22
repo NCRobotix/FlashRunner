@@ -79,6 +79,7 @@ function component(width, height, color, x, y, type) {
   this.type = type;
   this.width = width;
   this.height = height;
+  this.speed = 1;
   this.speedX = 0;
   this.speedY = 0;
   this.update = function(){
