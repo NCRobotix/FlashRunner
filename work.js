@@ -7,6 +7,62 @@ window.addEventListener("keyup", ev => {
   }
 });
 
+var state = (function () {
+    "use strict";
+    var currentState = -1,
+        stateNames = [],
+        stateCallbacks = [];
+
+    return {
+        current: function () {
+            if (currentState >= 0) {
+                return stateNames[currentState];
+            }
+        },
+        add: function (name, onEnter, onExit) {
+            var index = stateNames.indexOf(name);
+            if (index !== -1) {
+                throw "State " + name + " already exist!";
+            }
+            stateCallbacks.push({
+                enterState: onEnter || false,
+                exitState: onExit || false
+            });
+            stateNames.push(name);
+        },
+        remove: function (name) {
+            var index = stateNames.indexOf(name);
+            if (index === -1) {
+                throw "State " + name + " not found!";
+            }
+            stateNames.splice(index, 1);
+            stateCallbacks.splice(index, 1);
+        },
+        enter: function (name) {
+            var index = stateNames.indexOf(name);
+            if (index === -1) {
+                throw "State " + name + " not found!";
+            }
+            if (stateCallbacks[currentState].exitState) {
+                stateCallbacks[currentState].exitState();
+            }
+            currentState = index;
+            if (stateCallbacks[index].enterState) {
+                stateCallbacks[index].enterState();
+            }
+        },
+        exit: function () {
+            if (currentState === -1) {
+                throw "Not currently in any state";
+            }
+            if (stateCallbacks[currentState].exitState) {
+                stateCallbacks[currentState].exitState();
+            }
+            currentState = -1;
+        }
+    };
+}());
+
 function startGame() {
   myGamePiece = new component(30, 30, "red", 10, 120);
   myGamePiece.gravity = 0.05;
