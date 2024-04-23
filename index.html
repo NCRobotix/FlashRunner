@@ -8,7 +8,7 @@
   <body>
   <div id="startScreen">
     <script src="work.js">
-      startGame();
+      
     </script>
     <canvas id="gamecanvas">       
     </canvas>
@@ -19,10 +19,11 @@
       <input id="StartButton" type="button" value="Start"/>
     </div>
     <canvas id="GameCanvas" style="display: none;">Game Stuff</canvas>
-    <script>
+    <script src="work.js">
       $("#StartButton").click(function () {
         $("#SplashScreen").hide();
         $("#GameCanvas").show();
+        startGame();
       });
     </script>
   </div>
