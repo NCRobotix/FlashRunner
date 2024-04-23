@@ -3,6 +3,12 @@ body {
   background: linear-gradient(#333, white) no-repeat;
 }
 
+body, button {
+    color: blue;
+    text-align: center;
+    font-family: cursive;
+}
+
 #startScreen {
   margin: auto;
   margin-top: 50px;
