@@ -6,7 +6,12 @@
   </head>
   <body>
   <div id="startScreen">
-    <script src="work.js"></script>
+    <script src="work.js">
+      <canvas>
+        <button onmousedown="moveleft()" onmouseup="stopMove()" ontouchstart="moveleft()">LEFT</button>
+        <button onmousedown="moveright()" onmouseup="stopMove()" ontouchstart="moveright()">RIGHT</button>      
+      </canvas>
+    </script>
     <div>
       <h1>Flash Runner</h1>
     </div>
@@ -14,10 +19,7 @@
       <p>click in the window<br/>press up arrow (<span>&uarr;</span>) to start</p>
       <input id="StartButton" type="button" value="Start"/>
     </div>
-    <button onmousedown="moveleft()" onmouseup="stopMove()" ontouchstart="moveleft()">LEFT</button>
-    <button onmousedown="moveright()" onmouseup="stopMove()" ontouchstart="moveright()">RIGHT</button>
+
   </div>
-  <canvas></canvas>
-  
   </body>
 </html>
