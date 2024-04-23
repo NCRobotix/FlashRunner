@@ -17,11 +17,17 @@
       <button onmousedown="moveright()" onmouseup="stopMove()" ontouchstart="moveright()">RIGHT</button> 
     <div class="titlescreen">
     </div>
-    <div class="titlescreen>
-      <p>click in the window<br/>press up arrow (<span>&uarr;</span>) to start</p>
+    <div id="SplashScreen">
+      <h1>Game Title</h1>
       <input id="StartButton" type="button" value="Start"/>
     </div>
-
+    <canvas id="GameCanvas" style="display: none;">Game Stuff</canvas>
+    <script>
+      $("#StartButton").click(function () {
+        $("#SplashScreen").hide();
+        $("#GameCanvas").show();
+      });
+    </script>
   </div>
   </body>
 </html>
