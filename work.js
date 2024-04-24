@@ -12,9 +12,10 @@ window.addEventListener('load', function(){
       this.width = width;
       this.height = height;
       this.player = new Player(this);
+      this.input = new InputHandler();
     }
     update(){
-      
+      this.player.update();
     }
     draw(context){
       this.player.draw();
@@ -25,6 +26,8 @@ window.addEventListener('load', function(){
   console.log(game);
 
   function animate(){
+    ctx.clearRect(0, 0, canvas.width;, canvas.height);
+    game.update();
     game.draw(ctx);
     requestAnimationFrame(animate);
   }
@@ -49,6 +52,30 @@ class Player{
     context.fillStyle = "red";
     context.fillRect(this.x, this.y, this.width, this.height);
     context.drawImage(this.image, this.x, this.y);
+  }
+}
+
+class InputHandler{
+  constructor(){
+    this.keys = [];
+    windows.addEventListener('keyleft', e =>{
+      console.log(e.key, this.keys);
+      if((e.key === "ArrowLeft" ||
+         e.key === "ArrowRight" ||
+         e.key === "Spacebar" ||
+         e.key === "Enter") && this.keys.indexOf(e.key) === -1){
+        this.keys.push(e.key);
+      }
+    });
+    windows.addEventListener('keyleft', e =>{
+      console.log(e.key, this.keys);
+      if(e.key === "ArrowLeft" ||
+         e.key === "ArrowRight" ||
+         e.key === "Spacebar" ||
+         e.key === "Enter") && this.keys.Splice(this.keys.indexOf(e.key), 1);{
+        this.keys.push(e.key);
+      }
+    });
   }
 }
 
