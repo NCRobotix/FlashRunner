@@ -1,4 +1,4 @@
-import { Player } from './player.js';
+import { Player } from "./player.js"
 
 //////loading
 window.addEventListener('load', function(){
@@ -23,6 +23,12 @@ window.addEventListener('load', function(){
 
   const game = new Game(canvas.width, canvas.height);
   console.log(game);
+
+  function animate(){
+    game.draw(ctx);
+    requestAnimationFrame(animate);
+  }
+  animate();
 )
 };
 
