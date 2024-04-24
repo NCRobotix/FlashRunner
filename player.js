@@ -11,6 +11,7 @@ export class Player{
   }
 
   draw(context){
+    context.fillStyle = "red";
     context.fillRect(this.x, this.y, this.width, this.height);
   }
 }
