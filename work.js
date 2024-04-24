@@ -47,3 +47,18 @@ function game(){
   fill(250, 0, 0);
   rect(p1x, p1y, pWidth, pHeight);
 }
+
+function keyPressed(){
+  if(keyDown('LEFT_ARROW')){
+    p1x = p1x - 5;
+  }
+  if(keyDown('RIGHT_ARROW')){
+    p1x = p1x + 5;
+  }
+}
+
+function keyType(){
+  if(keyDown('SPACEBAR')){
+    ;
+  }
+}
