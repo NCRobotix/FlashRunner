@@ -1,3 +1,13 @@
+//////loading
+window.addEventListener('load', function(){
+  const canvas = document.getElemebtById("gameCanvas");
+  const ctx = canvas.getContent("2d");
+  canvas.width = 500;
+  canvas.height = 500;
+  
+)
+};
+
 
 //////variables
 var stage = 0;
