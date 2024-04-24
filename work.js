@@ -14,7 +14,7 @@ window.addEventListener('load', function(){
       this.player = new Player(this);
       this.input = new InputHandler();
     }
-    update(){
+    update(input){
       this.player.update();
     }
     draw(context){
@@ -43,10 +43,30 @@ class Player{
     this.x = 0;
     this.y = this.game.height - this.height;
     this.iamge = document.getElementById('player');
+    this.speed = 0;
+    this.maxSpeed = 10;
   }
-  update(){
-    
-  }
+  update(input){
+      this.x == this.speed;
+      if(input.includes('ArrowRight')){
+        this.Speed = this.maxSpeed;
+      }
+      else if(input.Includes('ArrowLeft')){
+        this.Speed = -this.maxSpeed;
+      }
+      else if(input.Includes('ArrowUp')){
+        y++;
+      }
+    else{
+      this.speed = 0;
+    }
+    if(this.x < 0){
+      this.x = 0;
+    }
+    if(this.x > this.gameWidth - this.width){
+      this.x = this.game.Width - this.width;
+    }
+    }
 
   draw(context){
     context.fillStyle = "red";
