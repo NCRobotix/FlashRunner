@@ -18,6 +18,10 @@ body {
   max-height: 100%;
 }
 
+#player{
+  display: none;
+}
+
 body, button {
     color: blue;
     text-align: center;
