@@ -217,6 +217,26 @@ function sound(src) {
   }
 }
 
+function startScreen(){
+  background(0, 0, 0);
+  fill(255, 0, 0);
+  textsize(60);
+  textfont(bubbleFont);
+  text("FLASH RUNNER", 400, 150);
+  fill(255, 250, 0);
+
+  fill("yellow");
+  rect(400, 300, 200, 50, 20);
+
+  textSize(10);
+  fill(0, 0, 255);
+  text("Click to Start", 400, 310);
+
+  if(mouseIsPressed = true){
+    
+  }
+}
+
 var state = (function () {
     "use strict";
     var currentState = -1,
