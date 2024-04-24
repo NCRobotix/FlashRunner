@@ -1,3 +1,5 @@
+import { Player } from './player.js';
+
 //////loading
 window.addEventListener('load', function(){
   const canvas = document.getElemebtById("gameCanvas");
