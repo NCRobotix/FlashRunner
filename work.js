@@ -27,4 +27,19 @@ function draw(){
 //////game function
 function game(){
   background(20, 20, 20);
+  //window frame
+  noFill(0);
+  strokeWeight(15);
+  rect(width/2, height/2, width, height);
+
+  //box
+  stroke(0);
+  strokeWeight(5);
+  fill(55, 50, 50);
+  rect(b1x, b1y, bWidth, bHeight);
+
+  //player
+  stroke(0);
+  fill(250, 0, 0);
+  rect(p1x, p1y, pWidth, pHeight);
 }
