@@ -1,4 +1,4 @@
-import player.js;
+import { Player } from './player.js';
 
 //////loading
 window.addEventListener('load', function(){
@@ -22,6 +22,7 @@ window.addEventListener('load', function(){
   }
 
   const game = new Game(canvas.width, canvas.height);
+  console.log(game);
 )
 };
 
