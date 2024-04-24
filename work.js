@@ -1,4 +1,4 @@
-import { Player } from "./player.js"
+import { Player } from './player.js';
 
 //////loading
 window.addEventListener('load', function(){
