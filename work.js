@@ -94,7 +94,7 @@ function keyType(){
 }
 
 function preload(){
-  red = loadImage('Media/Players/RedPlayer.png');
-  platform = loadImage('Media/Players/RedPlayer.png');
+  red = loadImage('RedPlayer.png');
+  platform = loadImage('RedPlayer.png');
   
 }
