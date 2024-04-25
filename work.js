@@ -1,5 +1,5 @@
 //import { Player } from './player.js';
-
+import productAPI from "./api.json" assert { type: "json" };
 //////loading
 
 
@@ -15,6 +15,10 @@ var b1x = 200;
 var b1y = 300;
 var bWidth = 30;
 var bHeight = 70;
+
+var direction = 1;
+var velocity = 2;
+var fallingSpeed = 2;
 
 function setUp(){
   createCanvas(800, 500);
@@ -46,6 +50,21 @@ function game(){
   stroke(0);
   fill(250, 0, 0);
   rect(p1x, p1y, pWidth, pHeight);
+
+  //collisions
+  if(p1x >= b1x-bWidth/2 && p1x <= b1x+bWidth/2 && p1y >= b1y-bHeight/2 && p1y <= b1y+bHeight/2){
+    p1y = p1y;
+    velocity = 0;
+  }
+}
+
+function gravity(){
+  if(b1y >= minHeight){
+    b1y = b1y;
+  }
+  else{
+    b1y = b1y + (direction * velocity);
+  }
 }
 
 function keyPressed(){
