@@ -8,7 +8,7 @@ var stage = 0;
 
 var p1x = 400;
 var p1y = 375;
-var pWidth = 30;
+var pWidth = 60;
 var pHeight = 70;
 
 var b1x = 200;
