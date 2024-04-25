@@ -20,10 +20,16 @@ var direction = 1;
 var velocity = 2;
 var fallingSpeed = 2;
 
+//multimedia
+var red;
+var platform;
+var block;
+
 function setUp(){
   createCanvas(800, 500);
   rectMode(center);
   textAlign(center);
+  imageMode(center);
 }
 
 function draw(){
@@ -45,17 +51,22 @@ function game(){
   strokeWeight(5);
   fill(55, 50, 50);
   rect(b1x, b1y, bWidth, bHeight);
+  image(platform, b1x, b1y, bWidth, bHeight);
 
   //player
   stroke(0);
+  strokeWeight(5);
   fill(250, 0, 0);
   rect(p1x, p1y, pWidth, pHeight);
+  image(red, p1x, p1y, pWidth, pHeight);
 
   //collisions
   if(p1x >= b1x-bWidth/2 && p1x <= b1x+bWidth/2 && p1y >= b1y-bHeight/2 && p1y <= b1y+bHeight/2){
     p1y = p1y;
     velocity = 0;
   }
+
+  image(red, width/2, height/2, 50, 80);
 }
 
 function gravity(){
@@ -80,4 +91,10 @@ function keyType(){
   if(keyDown('SPACEBAR')){
     ;
   }
+}
+
+function preload(){
+  red = loadImage('Media/Players/RedPlayer.png');
+  platform = loadImage('Media/Players/RedPlayer.png');
+  
 }
