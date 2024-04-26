@@ -7,10 +7,6 @@
     <title>Flash Runner Game</title>
     <link rel="stylesheet" href="index.css">
     <link rel="js-sheet" href="work.js">
-  </head>
-  <body>
-    <canvas id="gameCanvas" width="500" height="400"></canvas>
-
     <script language="javascript" src="work.js">
 import productAPI from "./api.json" assert { type: "json" };
 //////loadin
@@ -156,6 +152,9 @@ function preload(){
   platform = loadImage('Media/Players/RedPlayer.png');
   crashSound = loadSound('sound.wav');
 }
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="500" height="400"></canvas>
     </script>
   </body>
 </html>
