@@ -41,10 +41,10 @@ var block;
 var crashSound;
 
 function setUp(){
-  document.createCanvas(800, 500);
-  document.rectMode(center);
-  document.textAlign(center);
-  document.imageMode(center);
+  document.body.innerHTML.createCanvas(800, 500);
+  document.body.innerHTML.rectMode(center);
+  document.body.innerHTML.textAlign(center);
+  document.body.innerHTML.imageMode(center);
 }
 
 function draw(){
@@ -64,16 +64,16 @@ function draw(){
 }
 
 function splash(){
-  document.background(150, 230, 240);
-  document.image(landscape, width/2, height/2, width, height);
+  document.body.innerHTML.background(150, 230, 240);
+  document.body.innerHTML.image(landscape, width/2, height/2, width, height);
 
-  fill(255);
-  stroke(0);
-  strokeWeight(10);
-  document.textSize(100);
-  document.text('FIGS', width/2, 150);
-  document.textSize(20);
-  document.text('BY NC', width/2, 150);
+  document.body.innerHTML.fill(255);
+  document.body.innerHTML.stroke(0);
+  document.body.innerHTML.strokeWeight(10);
+  document.body.innerHTML.textSize(100);
+  document.body.innerHTML.text('FLASH RUNNER', width/2, 150);
+  document.body.innerHTML.textSize(20);
+  document.body.innerHTML.text('BY NC', width/2, 150);
 
   textSize(20);
   text('DIRECTIONS', width/2, 250);
