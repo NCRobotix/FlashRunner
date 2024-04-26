@@ -1,6 +1,3 @@
-import productAPI from "./api.json" assert { type: "json" };
-//////load
-
 
 //////variables
 var stage = 0;
