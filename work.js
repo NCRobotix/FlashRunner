@@ -1,4 +1,3 @@
-//import { Player } from './player.js';
 import productAPI from "./api.json" assert { type: "json" };
 //////loading
 
@@ -8,7 +7,7 @@ var stage = 0;
 
 var p1x = 400;
 var p1y = 375;
-var pWidth = 60;
+var pWidth = 30;
 var pHeight = 70;
 
 var b1x = 200;
@@ -20,10 +19,16 @@ var direction = 1;
 var velocity = 2;
 var fallingSpeed = 2;
 
+//counters
+var score = 0;
+var lives = 1;
+
+
 //multimedia
 var red;
 var platform;
 var block;
+var crashSound;
 
 function setUp(){
   createCanvas(800, 500);
@@ -33,9 +38,39 @@ function setUp(){
 }
 
 function draw(){
+  keyPressed();
+  keyType();
+  gravity();
+
+  if(stage == 0){
+    splash();
+  }
   if(stage == 1){
     game();
   }
+  if(mouseIsPressed == true){
+    stage = 1;
+  }
+}
+
+function splash(){
+  background(150, 230, 240);
+  image(landscape, width/2, height/2, width, height);
+
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('FIGS', width/2, 150);
+  textSize(20);
+  text('BY NC', width/2, 150);
+
+  textSize(20);
+  text('DIRECTIONS', width/2, 250);
+  textSize(20);
+  text('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
+  textSize(20);
+  text('BY NC', width/2, 350);
 }
 
 //////game function
@@ -67,6 +102,15 @@ function game(){
   }
 
   image(red, width/2, height/2, 50, 80);
+
+  //scoreboard
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('FIGS', width/2, 150);
+  textSize(20);
+  text('BY NC', width/2, 150);
 }
 
 function gravity(){
@@ -94,7 +138,7 @@ function keyType(){
 }
 
 function preload(){
-  red = loadImage("RedPlayer.jpg");
-  platform = loadImage('RedPlayer.jpg');
-  
+  red = loadImage('Media/Players/RedPlayer.png');
+  platform = loadImage('Media/Players/RedPlayer.png');
+  crashSound = loadSound('sound.wav');
 }
