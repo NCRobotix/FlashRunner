@@ -1,5 +1,5 @@
 import productAPI from "./api.json" assert { type: "json" };
-//////loading
+//////load
 
 
 //////variables
