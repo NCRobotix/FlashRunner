@@ -41,10 +41,10 @@ var block;
 var crashSound;
 
 function setUp(){
-  createCanvas(800, 500);
-  rectMode(center);
-  textAlign(center);
-  imageMode(center);
+  document.createCanvas(800, 500);
+  document.rectMode(center);
+  document.textAlign(center);
+  document.imageMode(center);
 }
 
 function draw(){
@@ -245,7 +245,7 @@ function game(){
   stroke(0);
   strokeWeight(5);
   fill(55, 50, 50);
-  rect(b1x, b1y, bWidth, bHeight);
+  document.rect(b1x, b1y, bWidth, bHeight);
   image(platform, b1x, b1y, bWidth, bHeight);
 
   //player
