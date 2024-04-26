@@ -10,9 +10,10 @@
   </head>
   <body>
     <canvas id="gameCanvas" width="500" height="400"></canvas>
-    
-    <div>
-    <script language="javascript" src="main/work.js">
+
+    <script language="javascript" src="work.js">
+
+      import productAPI from "./api.json" assert { type: "json" };
       var stage = 0;
 
 var p1x = 400;
@@ -108,6 +109,5 @@ function preload(){
   
 }
     </script>
-    </div>
   </body>
 </html>
