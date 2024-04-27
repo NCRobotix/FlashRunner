@@ -7,10 +7,17 @@ var p1y = 375;
 var pWidth = 30;
 var pHeight = 70;
 
+
+//box;
 var b1x = 200;
 var b1y = 300;
 var bWidth = 30;
 var bHeight = 70;
+var b1position = 0;
+var bSpeed = 2;
+var bDirection = -1;
+var bDistance = 100;
+
 
 var direction = 1;
 var velocity = 2;
@@ -23,9 +30,9 @@ var lives = 1;
 
 //multimedia
 var red;
-var platform;
+const platform;
 var block;
-var crashSound;
+const crashSound;
 
 function setUp(){
   createCanvas(800, 500);
@@ -85,6 +92,8 @@ function game(){
   rect(b1x, b1y, bWidth, bHeight);
   image(platform, b1x, b1y, bWidth, bHeight);
 
+  b1y = b1y + (gSpeed * gDirection);
+  
   //player
   stroke(0);
   strokeWeight(5);
@@ -96,6 +105,8 @@ function game(){
   if(p1x >= b1x-bWidth/2 && p1x <= b1x+bWidth/2 && p1y >= b1y-bHeight/2 && p1y <= b1y+bHeight/2){
     p1y = p1y;
     velocity = 0;
+    lives = lives - 1;
+    crashSound.play();
   }
 
   image(red, width/2, height/2, 50, 80);
@@ -105,9 +116,15 @@ function game(){
   stroke(0);
   strokeWeight(10);
   textSize(100);
-  text('FIGS', width/2, 150);
-  textSize(20);
-  text('BY NC', width/2, 150);
+  text('POINTS: ', 50, 50);
+  text(score, 100, 50);
+
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('LIVES: ', 150, 50);
+  text(lives, 200, 50);
 }
 
 function gravity(){
