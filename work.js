@@ -93,7 +93,10 @@ function game(){
   image(platform, b1x, b1y, bWidth, bHeight);
 
   b1y = b1y + (gSpeed * gDirection);
-  
+  if(b1y <= bPosition){
+    ;
+  }
+
   //player
   stroke(0);
   strokeWeight(5);
