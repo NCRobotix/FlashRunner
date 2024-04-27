@@ -6,8 +6,6 @@ var p1x = 400;
 var p1y = 375;
 var pWidth = 30;
 var pHeight = 70;
-
-
 //box;
 var b1x = 200;
 var b1y = 300;
@@ -26,10 +24,14 @@ var fallingSpeed = 2;
 //counters
 var score = 0;
 var lives = 1;
-
+var timer = 0;
+var timeLimit = 60;
+var splashTime;
+var gameTime;
 
 //multimedia
 var red;
+var landscape;
 const platform;
 var block;
 const crashSound;
@@ -45,12 +47,19 @@ function draw(){
   keyPressed();
   keyType();
   gravity();
-
+  timer = millis();
+  
   if(stage == 0){
     splash();
   }
   if(stage == 1){
     game();
+  }
+  if(stage == 2){
+    
+  }
+  if(stage == 3){
+    
   }
   if(mouseIsPressed == true){
     stage = 1;
@@ -128,7 +137,27 @@ function game(){
   textSize(100);
   text('LIVES: ', 150, 50);
   text(lives, 200, 50);
+
+  splashTime = splashTime;
+  timer = int((timer-splashTime)/1000);
+  
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('POWER TIMER: ', 150, 50);
+  text(timeLimit - timer, 200, 50);
 }
+
+//win and lose
+function winScreen(){
+    image(landscape, width/2, height/2, width, height);
+}
+
+function loseScreen(){
+  
+}
+
 
 function gravity(){
   if(b1y >= minHeight){
@@ -155,7 +184,8 @@ function keyType(){
 }
 
 function preload(){
-  red = loadImage('Media/Players/RedPlayer.png');
-  platform = loadImage('Media/Players/RedPlayer.png');
+  red = loadImage('Media/Players/RedPlayer.jpg');
+  platform = loadImage('Media/Players/RedPlayer.jpg');
+  landscape = loadImage('Media/Players/GreenPlayer.jpg');
   crashSound = loadSound('sound.wav');
 }
