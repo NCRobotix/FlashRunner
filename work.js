@@ -35,12 +35,15 @@ var landscape;
 const platform;
 var block;
 const crashSound;
+var theme;
 
 function setUp(){
   createCanvas(800, 500);
   rectMode(center);
   textAlign(center);
   imageMode(center);
+
+  theme.play();
 }
 
 function draw(){
@@ -56,10 +59,10 @@ function draw(){
     game();
   }
   if(stage == 2){
-    
+    loseScreen();
   }
   if(stage == 3){
-    
+    shopScreen();
   }
   if(mouseIsPressed == true){
     stage = 1;
@@ -147,15 +150,24 @@ function game(){
   textSize(100);
   text('POWER TIMER: ', 150, 50);
   text(timeLimit - timer, 200, 50);
+
+  if(lives <= 0){
+    loseSound.play();
+    stage = 2;
+  }
 }
 
-//win and lose
-function winScreen(){
-    image(landscape, width/2, height/2, width, height);
-}
-
+//lose screen
 function loseScreen(){
-  
+  image(landscape, width/2, height/2, width, height);
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('You died... :c', width/2, height/2 200, 50);
+  strokeWeight(20);
+  textSize(100);
+  text('SCORE: ' + score, width/2, height/2, 250, 50);
 }
 
 
@@ -188,4 +200,6 @@ function preload(){
   platform = loadImage('Media/Players/RedPlayer.jpg');
   landscape = loadImage('Media/Players/GreenPlayer.jpg');
   crashSound = loadSound('sound.wav');
+  loseSound = loadSound('sound.wav');
+  theme = loadSound('sound.wav');
 }
