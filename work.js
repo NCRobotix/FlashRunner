@@ -77,7 +77,7 @@ function splash(){
   stroke(0);
   strokeWeight(10);
   textSize(100);
-  text('FIGS', width/2, 150);
+  text("FLASH RUNNER", width/2, 150);
   textSize(20);
   text('BY NC', width/2, 150);
 
@@ -170,6 +170,14 @@ function loseScreen(){
   text('SCORE: ' + score, width/2, height/2, 250, 50);
 }
 
+function shopScreen(){
+  image(landscape, width/2, height/2, width, height);
+  fill(255);
+  stroke(0);
+  strokeWeight(10);
+  textSize(100);
+  text('SHOP', width/2, height/2 200, 50);
+}
 
 function gravity(){
   if(b1y >= minHeight){
