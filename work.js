@@ -186,6 +186,15 @@ function gravity(){
   else{
     b1y = b1y + (direction * velocity);
   }
+  
+  //horizonal barriers
+  if(p1x+pWidth/2 >= width){
+    p1x = p1x-5;
+  }
+
+  if(p1x-pWidth/2 <= 0){
+    p1x = p1x+5;
+  }
 }
 
 function keyPressed(){
