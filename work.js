@@ -16,7 +16,6 @@ var bSpeed = 2;
 var bDirection = -1;
 var bDistance = 100;
 
-
 var direction = 1;
 var velocity = 2;
 var fallingSpeed = 2;
@@ -87,74 +86,6 @@ function splash(){
   text('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
   textSize(20);
   text('BY NC', width/2, 350);
-}
-
-//////game function
-function game(){
-  background(20, 20, 20);
-  //window frame
-  noFill(0);
-  strokeWeight(15);
-  rect(width/2, height/2, width, height);
-
-  //box
-  stroke(0);
-  strokeWeight(5);
-  fill(55, 50, 50);
-  rect(b1x, b1y, bWidth, bHeight);
-  image(platform, b1x, b1y, bWidth, bHeight);
-
-  b1y = b1y + (gSpeed * gDirection);
-  if(b1y <= bPosition){
-    ;
-  }
-
-  //player
-  stroke(0);
-  strokeWeight(5);
-  fill(250, 0, 0);
-  rect(p1x, p1y, pWidth, pHeight);
-  image(red, p1x, p1y, pWidth, pHeight);
-
-  //collisions
-  if(p1x >= b1x-bWidth/2 && p1x <= b1x+bWidth/2 && p1y >= b1y-bHeight/2 && p1y <= b1y+bHeight/2){
-    p1y = p1y;
-    velocity = 0;
-    lives = lives - 1;
-    crashSound.play();
-  }
-
-  image(red, width/2, height/2, 50, 80);
-
-  //scoreboard
-  fill(255);
-  stroke(0);
-  strokeWeight(10);
-  textSize(100);
-  text('POINTS: ', 50, 50);
-  text(score, 100, 50);
-
-  fill(255);
-  stroke(0);
-  strokeWeight(10);
-  textSize(100);
-  text('LIVES: ', 150, 50);
-  text(lives, 200, 50);
-
-  splashTime = splashTime;
-  timer = int((timer-splashTime)/1000);
-  
-  fill(255);
-  stroke(0);
-  strokeWeight(10);
-  textSize(100);
-  text('POWER TIMER: ', 150, 50);
-  text(timeLimit - timer, 200, 50);
-
-  if(lives <= 0){
-    loseSound.play();
-    stage = 2;
-  }
 }
 
 //lose screen
