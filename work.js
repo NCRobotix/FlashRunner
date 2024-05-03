@@ -77,9 +77,9 @@ function splash(){
   stroke(0);
   strokeWeight(10);
   textSize(100);
-  text("FLASH RUNNER", width/2, 150);
+  let text("FLASH RUNNER", width/2, 150);
   textSize(20);
-  text('BY NC', width/2, 150);
+  let text('BY NC', width/2, 150);
 
   textSize(20);
   text('DIRECTIONS', width/2, 250);
