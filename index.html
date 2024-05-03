@@ -15,12 +15,11 @@
     <canvas width="600" height="800"></canvas>
     <script type="text/javascript" src="work.js">
 fill(255);
-  stroke(0);
-  strokeWeight(10);
-  textSize(100);
-  let text("FLASH RUNNER", width/2, 150);
-  textSize(20);
-  text('BY NC', width/2, 150);
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "50px Arial";
+ctx.fillText("Hello World",10,80);
     </script>
   </body>
 </html>
