@@ -12,10 +12,10 @@
     <div><img id="player" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="red" width="20" height="20"></div>
     <div id="block" width="30" height="30"></div>
-    <canvas width="600" height="800"></canvas>
+    <canvas id="gameCanvas" width="600" height="800"></canvas>
     <script type="text/javascript" src="work.js">
 fill(255);
-const canvas = document.getElementById("myCanvas");
+const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 ctx.font = "50px Arial";
