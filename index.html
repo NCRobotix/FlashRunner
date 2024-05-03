@@ -14,11 +14,13 @@
     <div id="block" width="30" height="30"></div>
     <canvas id="gameCanvas" width="600" height="800"></canvas>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js">
-      const canvas = document.getElementById("gameCanvas");
-      const ca = canvas.getContext("2d");
+      window.onLoad = function() {
+        const canvas = document.getElementById("gameCanvas");
+        const ca = canvas.getContext("2d");
 //<link href="work.js">
-      ca.font = "50px Arial";
-      ca.fillText("FLASH RUNNER",10,80);
+        ca.font = "50px Arial";
+        ca.fillText("FLASH RUNNER",10,80);
+      }
     </script>
   </body>
 </html>
