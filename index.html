@@ -30,7 +30,25 @@
         console.log(ca);
         ca.font = "50px Arial";
         ca.splash();
-        
+
+        function splash(){
+    //document.canvas.style.background = #FFFFFF;
+    ca.image(landscape, width/2, height/2, width, height);
+  
+    ca.font = "30px Arial";
+    ca.stroke(0);
+    ca.strokeWeight(10);
+    ca.textSize(80);
+    ca.fillText("FLASH RUNNER", width/2, 150);
+    ca.fillText('BY NC', width/2, 150);
+  
+    ca.textSize(20);
+    ca.fillText('DIRECTIONS', width/2, 250);
+    textSize(20);
+    ca.fillText('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
+    ca.textSize(20);
+    ca.fillText('BY NC', width/2, 350);
+  }
       }
 
 //box;
@@ -62,26 +80,6 @@ var platform;
 var block;
 var crashSound;
 var theme;
-
-      function splash(){
-    document.canvas.style.background = #FFFFFF;
-    ca.image(landscape, width/2, height/2, width, height);
-  
-    ca.font = "30px Arial";
-    ca.stroke(0);
-    ca.strokeWeight(10);
-    ca.textSize(80);
-    ca.fillText("FLASH RUNNER", width/2, 150);
-    textSize(20);
-    ca.fillText('BY NC', width/2, 150);
-  
-    ca.textSize(20);
-    ca.fillText('DIRECTIONS', width/2, 250);
-    textSize(20);
-    ca.fillText('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
-    ca.textSize(20);
-    ca.fillText('BY NC', width/2, 350);
-  }
       
     </script>
   </body>
