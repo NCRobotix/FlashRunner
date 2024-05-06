@@ -88,21 +88,19 @@ var ca = canvas.getContext("2d");
   function splash(){
     ca.background(150, 230, 240);
     ca.image(landscape, width/2, height/2, width, height);
-  
+
+    ca.font(50px Arial);
     ca.fill(255);
     ca.stroke(0);
     ca.strokeWeight(10);
     ca.textSize(100);
-    let text("FLASH RUNNER", width/2, 150);
+    ca.filltext("FLASH RUNNER", width/2, 150);
     ca.textSize(20);
-    let text('BY NC', width/2, 150);
+    ca.filltext('BY NC', width/2, 150);
   
-    ca.textSize(20);
     ca.text('DIRECTIONS', width/2, 250);
-    ca.textSize(20);
-    ca.text('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
-    ca.textSize(20);
-    ca.text('BY NC', width/2, 350);
+    ca.filltext('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
+    ca.filltext('BY NC', width/2, 350);
   }
   
   //lose screen
