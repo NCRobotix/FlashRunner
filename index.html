@@ -14,7 +14,7 @@
     <div id="block" width="30" height="30"></div>
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
-      let stage = 0;
+      var stage = 0;
         
         var p1x = 400;
         var p1y = 375;
@@ -27,16 +27,8 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         ca.font = "50px Arial";
-        splash();
-
-        }
-        function screenSelect(){
-          if(stage = 0){
-            splash();
-          }
-        }
-
-          function splash(){
+        screenSelect();
+function splash(){
             //document.canvas.style.background = #FFFFFF;
             //ca.image(landscape, width/2, height/2, width, height);
           
@@ -49,6 +41,15 @@
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
             ca.fillText("BY NC", width/2, 350);
           }
+        function screenSelect(){
+          if(stage = 0){
+            splash();
+          }
+        }
+        }
+        
+
+          
 
 //box;
 var b1x = 200;
