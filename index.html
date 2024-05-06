@@ -15,6 +15,9 @@
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
       window.onload = function draw() {
+        ca.setUp();
+        ca.draw();
+      }
 var stage = 0;
 
 var p1x = 400;
@@ -166,7 +169,7 @@ var ca = canvas.getContext("2d");
     loseSound = loadSound('sound.wav');
     theme = loadSound('sound.wav');
   }
-      }
+      
     </script>
   </body>
 </html>
