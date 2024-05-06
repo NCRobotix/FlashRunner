@@ -21,13 +21,15 @@
         var p1y = 375;
         var pWidth = 30;
         var pHeight = 90;
+        var width =200;
+        var height = 200;
 
         
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
         ca.font = "50px Arial";
-        ca.fillText("FLASH RUNNER", 350, 200);
+        splash();
         
       }
 
@@ -61,6 +63,25 @@ var block;
 var crashSound;
 var theme;
 
+      function splash(){
+    document.body.style.background = #FFFFFF;
+    ca.image(landscape, width/2, height/2, width, height);
+  
+    ca.fontsize("30px Arial");
+    ca.stroke(0);
+    ca.strokeWeight(10);
+    ca.textSize(80);
+    ca.fillText("FLASH RUNNER", width/2, 150);
+    textSize(20);
+    ca.fillText('BY NC', width/2, 150);
+  
+    ca.textSize(20);
+    ca.fillText('DIRECTIONS', width/2, 250);
+    textSize(20);
+    ca.fillText('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
+    ca.textSize(20);
+    ca.fillText('BY NC', width/2, 350);
+  }
       
     </script>
   </body>
