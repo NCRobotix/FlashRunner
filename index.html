@@ -51,6 +51,10 @@ var block;
 const crashSound;
 var theme;
 
+var canvas = document.getElementById("gameCanvas");
+var ca = canvas.getContext("2d");
+        console.log(ca);
+        
   function setUp(){
     createCanvas(800, 500);
     rectMode(center);
