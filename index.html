@@ -12,7 +12,7 @@
     <div><img id="player" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="red" width="20" height="20"></div>
     <div id="block" width="30" height="30"></div>
-    <canvas id="gameCanvas" width="600" height="800"></canvas>
+    <canvas id="gameCanvas" width="800" height="1000"></canvas>
     <script>
       window.onload = function draw() {
 var stage = 0;
@@ -56,11 +56,9 @@ var ca = canvas.getContext("2d");
         console.log(ca);
         
   function setUp(){
-    createCanvas(800, 500);
-    rectMode(center);
-    textAlign(center);
-    imageMode(center);
-  
+    ca.rectMode(center);
+    ca.textAlign(center);
+    ca.imageMode(center);
     theme.play();
   }
   
@@ -71,13 +69,13 @@ var ca = canvas.getContext("2d");
     timer = millis();
     
     if(stage == 0){
-      splash();
+      ca.splash();
     }
     if(stage == 1){
-      game();
+      ca.game();
     }
     if(stage == 2){
-      loseScreen();
+      ca.loseScreen();
     }
     if(stage == 3){
       shopScreen();
