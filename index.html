@@ -15,18 +15,21 @@
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
       window.onload = function draw() {
+        var stage = 0;
+        
+        var p1x = 400;
+        var p1y = 375;
+        var pWidth = 30;
+        var pHeight = 70;
+
+        
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
         ca.font = "50px Arial";
         ca.fillText("FLASH RUNNER", 10, pHeight);
       }
-var stage = 0;
 
-var p1x = 400;
-var p1y = 375;
-var pWidth = 30;
-var pHeight = 70;
 //box;
 var b1x = 200;
 var b1y = 300;
