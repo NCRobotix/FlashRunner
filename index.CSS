@@ -20,11 +20,11 @@ body {
 body, button {
     color: blue;
     text-align: center;
-    font-family: cursive;background-color: #D5D5D5;
+    font-family: cursive;
 }
 
 #startScreen {
-  margin: auto;
+  margin: auto;background-color: #D5D5D5;
   margin-top: 50px;
   position: relative;
   width: 300px;
