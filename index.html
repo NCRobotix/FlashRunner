@@ -15,8 +15,11 @@
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
       window.onload = function draw() {
-        ca.setUp();
-        ca.draw();
+        var canvas = document.getElementById("gameCanvas");
+        var ca = canvas.getContext("2d");
+        console.log(ca);
+        ca.font = "50px Arial";
+        ca.fillText("FLASH RUNNER", 10, pHeight);
       }
 var stage = 0;
 
@@ -54,121 +57,6 @@ var block;
 const crashSound;
 var theme;
 
-var canvas = document.getElementById("gameCanvas");
-var ca = canvas.getContext("2d");
-        console.log(ca);
-        
-  function setUp(){
-    ca.rectMode(center);
-    ca.textAlign(center);
-    ca.imageMode(center);
-    theme.play();
-  }
-  
-  function draw(){
-    keyPressed();
-    keyType();
-    gravity();
-    timer = millis();
-    
-    if(stage == 0){
-      ca.splash();
-    }
-    if(stage == 1){
-      ca.game();
-    }
-    if(stage == 2){
-      ca.loseScreen();
-    }
-    if(stage == 3){
-      shopScreen();
-    }
-    if(mouseIsPressed == true){
-      stage = 1;
-    }
-  }
-  
-  function splash(){
-    ca.background(150, 230, 240);
-    ca.image(landscape, width/2, height/2, width, height);
-
-    ca.font(50px Arial);
-    ca.fill(255);
-    ca.stroke(0);
-    ca.strokeWeight(10);
-    ca.textSize(100);
-    ca.filltext("FLASH RUNNER", width/2, 150);
-    ca.textSize(20);
-    ca.filltext('BY NC', width/2, 150);
-  
-    ca.text('DIRECTIONS', width/2, 250);
-    ca.filltext('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
-    ca.filltext('BY NC', width/2, 350);
-  }
-  
-  //lose screen
-  function loseScreen(){
-    image(landscape, width/2, height/2, width, height);
-    fill(255);
-    stroke(0);
-    strokeWeight(10);
-    textSize(100);
-    text('You died... :c', width/2, height/2 200, 50);
-    strokeWeight(20);
-    textSize(100);
-    text('SCORE: ' + score, width/2, height/2, 250, 50);
-  }
-  
-  function shopScreen(){
-    image(landscape, width/2, height/2, width, height);
-    fill(255);
-    stroke(0);
-    strokeWeight(10);
-    textSize(100);
-    text('SHOP', width/2, height/2 200, 50);
-  }
-  
-  function gravity(){
-    if(b1y >= minHeight){
-      b1y = b1y;
-    }
-    else{
-      b1y = b1y + (direction * velocity);
-    }
-    
-    //horizonal barriers
-    if(p1x+pWidth/2 >= width){
-      p1x = p1x-5;
-    }
-  
-    if(p1x-pWidth/2 <= 0){
-      p1x = p1x+5;
-    }
-  }
-  
-  function keyPressed(){
-    if(keyDown('LEFT_ARROW')){
-      p1x = p1x - 5;
-    }
-    if(keyDown('RIGHT_ARROW')){
-      p1x = p1x + 5;
-    }
-  }
-  
-  function keyType(){
-    if(keyDown('SPACEBAR')){
-      ;
-    }
-  }
-  
-  function preload(){
-    red = loadImage('Media/Players/RedPlayer.jpg');
-    platform = loadImage('Media/Players/RedPlayer.jpg');
-    landscape = loadImage('Media/Players/GreenPlayer.jpg');
-    crashSound = loadSound('sound.wav');
-    loseSound = loadSound('sound.wav');
-    theme = loadSound('sound.wav');
-  }
       
     </script>
   </body>
