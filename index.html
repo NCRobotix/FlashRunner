@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flash Runner Game</title>
     <link rel="stylesheet" href="index.CSS">
-    <link href="placeholder.js">
+
   </head>
   <body>
     <div><img id="player" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="red" width="20" height="20"></div>
     <div id="block" width="30" height="30"></div>
     <canvas id="gameCanvas" width="600" height="800"></canvas>
-    
+    <script>
+      window.onload = function draw() {
+        var canvas = document.getElementById("gameCanvas");
+        var ca = canvas.getContext("2d");
+        console.log(ca);
+        ca.font = "50px Arial";
+        ca.fillText("FLASH RUNNER", 10, 80);
+      }
+    </script>
   </body>
 </html>
