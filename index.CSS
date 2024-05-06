@@ -5,7 +5,7 @@
 
 body {
   height: 100vh;
-  
+  background-color: #D5D5D5;
 }
 
 #gameCanvas {
@@ -20,7 +20,7 @@ body {
 button {
     color: blue;
     text-align: center;
-    font-family: cursive;background-color: #D5D5D5;
+    font-family: cursive;
 }
 
 #startScreen {
