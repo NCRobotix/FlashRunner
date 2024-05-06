@@ -22,18 +22,38 @@
         var pHeight = 90;
         var width = 200;
         var height = 200;
+
+        //counters
+        var score = 0;
+        var lives = 1;
+        var timer = 0;
+        var timeLimit = 60;
+        var splashTime;
+        var gameTime;
+        
+        //multimedia
+        var red;
     //  window.onload = function draw() {
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
-        ca.font = "50px Arial";
-        splash();
-function splash(){
+        screenSelect();
+
+        function screenSelect(){
+          if(stage = 0){
+            splash();
+          }
+          if(stage = 2){
+            loseScreen();
+          }
+        }
+        function splash(){
             //document.canvas.style.background = #FFFFFF;
             //ca.image(landscape, width/2, height/2, width, height);
           
             ca.font = "50px Arial";
             ca.fillText("FLASH RUNNER", width/2, 150);
+            ca.font = "40px Arial";
             ca.fillText("BY NC", width/2, 200);
         
             ca.font = "20px Arial";
@@ -41,10 +61,12 @@ function splash(){
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
             ca.fillText("BY NC", width/2, 350);
           }
-        function screenSelect(){
-          if(stage = 0){
-            splash();
-          }
+        function loseScreen(){
+          //image(landscape, width/2, height/2, width, height);
+          ca.font = "50px Arial";
+          ca.text("You died...", width/2, height/2 200, 50);
+          ca.font = "20px Arial"
+          ca.text("SCORE: " + score, width/2, height/2, 250, 50);
         }
      //   }
         
@@ -64,14 +86,6 @@ var bDistance = 100;
 var direction = 1;
 var velocity = 2;
 var fallingSpeed = 2;
-
-//counters
-var score = 0;
-var lives = 1;
-var timer = 0;
-var timeLimit = 60;
-var splashTime;
-var gameTime;
 
 //multimedia
 var red;
