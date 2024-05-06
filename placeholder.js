@@ -1,4 +1,4 @@
-window.onLoad = function draw() {
+window.onload = function draw() {
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         ca.font = "50px Arial";
