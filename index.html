@@ -21,7 +21,7 @@
         var p1y = 375;
         var pWidth = 30;
         var pHeight = 90;
-        var width =200;
+        var width = 200;
         var height = 200;
 
         
@@ -33,21 +33,16 @@
 
         function splash(){
     //document.canvas.style.background = #FFFFFF;
-    ca.image(landscape, width/2, height/2, width, height);
+    //ca.image(landscape, width/2, height/2, width, height);
   
-    ca.font = "30px Arial";
-    ca.stroke(0);
-    ca.strokeWeight(10);
-    ca.textSize(80);
+    ca.font = "50px Arial";
     ca.fillText("FLASH RUNNER", width/2, 150);
-    ca.fillText('BY NC', width/2, 150);
-  
-    ca.textSize(20);
-    ca.fillText('DIRECTIONS', width/2, 250);
-    textSize(20);
-    ca.fillText('DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS', width/2, 300);
-    ca.textSize(20);
-    ca.fillText('BY NC', width/2, 350);
+    ca.fillText("BY NC", width/2, 150);
+
+    ca.font = "20px Arial";
+    ca.fillText("DIRECTIONS", width/2, 250);
+    ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
+    ca.fillText("BY NC", width/2, 350);
   }
       }
 
