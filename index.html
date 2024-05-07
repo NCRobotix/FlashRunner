@@ -14,7 +14,7 @@
     <div id="block" width="30" height="30"></div>
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
-      var stage = 0;
+        var stage = 2;
         
         var p1x = 400;
         var p1y = 375;
@@ -38,7 +38,7 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         splash();
-        window.addEventListener(" ", stageSelect());
+        window.addEventListener('spacebar', stageSelect());
       
         function screenSelect(){
           if(stage = 0){
