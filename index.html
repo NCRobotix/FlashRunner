@@ -38,13 +38,17 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         splash();
-        window.addEventListener(key32, stageSelect());
+        window.addEventListener('keydown', (e) => {
+          if (e.code === "Space") {
+              stageSelect();
+          }
+        });
       
         function screenSelect(){
-          if(stage = 0){
+          if(stage === 0){
             splash();
           }
-          if(stage = 2){
+          if(stage === 2){
             loseScreen();
           }
         }
