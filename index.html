@@ -45,10 +45,8 @@
               screenSelect();
           }
         });
-        setbut.addEventListener('click', function enterSettings(){
-          stage = 3;
-          screenSelect();
-        });
+        setbut.addEventListener('click', settings()
+        );
         function screenSelect(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
           if(stage === 0){
