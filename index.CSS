@@ -9,7 +9,7 @@ body {
 }
 
 #gameCanvas {
-  border: 5px solid black;
+  border: 5px 5px 0 5px solid black;
   background-color: #FFFFFF;
   position: absolute;
   top: 50%;
@@ -22,6 +22,12 @@ button {
     color: #CCFFCC;
     text-align: center;
     font-family: cursive;
+}
+
+#settings {
+  position: absolute;
+  width: 1500px;
+  height: 700px;
 }
 
 #startScreen {
