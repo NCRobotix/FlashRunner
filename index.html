@@ -34,11 +34,11 @@
         
         //multimedia
         var red;
-        
-      window.onload = function draw() {
         var setbut = document.getElementbyId("settings");
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
+      window.onload = function draw() {
+        
         console.log(ca);
         splash();
         window.addEventListener('keydown', (e) => {
@@ -46,8 +46,8 @@
               screenSelect();
           }
         });
-        setbut.addEventListener('click', settings()
-        );
+        //setbut.addEventListener('click', settings()
+       // );
         function screenSelect(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
           if(stage === 0){
