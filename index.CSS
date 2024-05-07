@@ -9,7 +9,8 @@ body {
 }
 
 #gameCanvas {
-  border: 5px 5px 0 5px solid black;
+  border: solid black;
+  border-width: 5px 5px 0 5px;
   background-color: #FFFFFF;
   position: absolute;
   top: 50%;
