@@ -49,8 +49,14 @@
           if(stage === 0){
             splash();
           }
+          if(stage === 1){
+            ;
+          }
           if(stage === 2){
             loseScreen();
+          }
+          if(stage === 3){
+            settings();
           }
         }
         function splash(){
@@ -75,6 +81,11 @@
           ca.fillText("You died...", 80, 400);
           ca.font = "20px Arial";
           ca.fillText("SCORE: " + score, 80, 450);
+        }
+
+        function settings(){
+          ca.rect();
+          ca.font = "50px Arial";
         }
        }
         
