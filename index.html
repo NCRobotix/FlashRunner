@@ -38,7 +38,7 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         splash();
-        //window.addEventListener(" ", stageSelect());
+        window.addEventListener(" ", stageSelect());
       
         function screenSelect(){
           if(stage = 0){
@@ -66,9 +66,9 @@
         function loseScreen(){
           //image(landscape, width/2, height/2, width, height);
           ca.font = "50px Arial";
-          ca.text("You died...", width/2, height/2 200, 50);
-          ca.font = "20px Arial"
-          ca.text("SCORE: " + score, width/2, height/2, 250, 50);
+          ca.fillText("You died...", width/2, height/2);
+          ca.font = "20px Arial";
+          ca.fillText("SCORE: " + score, width/2, height/2);
         }
        }
         
