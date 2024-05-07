@@ -37,8 +37,9 @@
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
-        screenSelect();
-
+        splash();
+        window.addEventListener(" ", loseScreen());
+      
         function screenSelect(){
           if(stage = 0){
             splash();
