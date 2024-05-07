@@ -34,6 +34,7 @@
         
         //multimedia
         var red;
+        var setbut = document.getElementbyId("settings");
       window.onload = function draw() {
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
@@ -44,7 +45,10 @@
               screenSelect();
           }
         });
-      
+        setbut.addEventListener('click', function enterSettings(){
+          stage = 3;
+          screenSelect();
+        });
         function screenSelect(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
           if(stage === 0){
@@ -85,8 +89,9 @@
         }
 
         function settings(){
-          ca.rect();
+          ca.fillRect(100, 100, 100, 100);
           ca.font = "50px Arial";
+          ca.fillText("MUSIC", 80, 250);
         }
        }
         
