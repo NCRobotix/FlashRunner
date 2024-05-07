@@ -38,7 +38,7 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         splash();
-        window.addEventListener(" ", loseScreen());
+        //window.addEventListener(" ", stageSelect());
       
         function screenSelect(){
           if(stage = 0){
@@ -62,6 +62,7 @@
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
             ca.fillText("BY NC", width/2, 350);
           }
+      
         function loseScreen(){
           //image(landscape, width/2, height/2, width, height);
           ca.font = "50px Arial";
