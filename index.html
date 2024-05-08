@@ -34,9 +34,9 @@
         
         //multimedia
         var red;
-        var loseSound;
+        var loseSound = loadSound('Media/Sound/sound.wav');
       window.onload = function draw() {
-        ca.preload();
+        //ca.preload();
         //var setbut = document.getElementbyId("settings");
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
@@ -80,7 +80,7 @@
           }
       
         function loseScreen(){
-          //loseSound.play();
+          loseSound.play();
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "50px Arial";
