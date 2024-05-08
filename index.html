@@ -15,7 +15,7 @@
     <div id="block" width="30" height="30"></div>
     <canvas id="gameCanvas" width="800" height="900"></canvas>
     <script>
-        var stage = 2;
+        var stage = 0;
         
         var p1x = 400;
         var p1y = 375;
@@ -46,14 +46,15 @@
         console.log(ca);
         splash();
         window.addEventListener('keydown', (e) => {
-          if (e.code === "Space") {
+          if (e.code === "Space" & stage == 0) {
               loseScreen();
+              stage = 2;
+              selectScreen();
           }
         });
         //setbut.addEventListener('click', settings()
        // );
         function screenSelect(){
-          ca.clearRect(0, 0, canvas.width, canvas.height);
           if(stage === 0){
             splash();
           }
@@ -87,9 +88,11 @@
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "50px Arial";
-          ca.fillText("You died...", 80, 400);
+          ca.fillText("You died...", 180, 300);
           ca.font = "20px Arial";
-          ca.fillText("SCORE: " + score, 80, 450);
+          ca.fillText("SCORE: " + score, 180, 350);
+          ca.font = "20px Arial";
+          ca.fillText("Press SPACE to restart", 180, 350);
         }
 
         function settings(){
