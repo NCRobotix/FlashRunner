@@ -33,8 +33,11 @@
         var gameTime;
         
         //multimedia
-        var red;
-        var loseSound = new Audio('Media/Sound/sound.wav');
+        var red = new Image(30, 30);
+        red.src = 'Media/Players/RedPlayer.jpg';
+        var yellow = new Image(30, 30);
+        yellow.src = 'Media/Players/YellowPlayer.jpg';
+        var crashSound = new Audio('Media/Sound/sound.wav');
       window.onload = function draw() {
         //ca.preload();
         //var setbut = document.getElementbyId("settings");
@@ -80,7 +83,7 @@
           }
       
         function loseScreen(){
-          loseSound.play();
+          crashSound.play();
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "50px Arial";
@@ -100,8 +103,6 @@
           red = loadImage('Media/Players/RedPlayer.jpg');
           //platform = loadImage('Media/Players/RedPlayer.jpg');
           //landscape = loadImage('Media/Players/GreenPlayer.jpg');
-          //crashSound = loadSound('sound.wav');
-          loseSound = loadSound('Media/Sound/sound.wav');
           //theme = loadSound('Media/Sound/sound.wav');
         }
        }
