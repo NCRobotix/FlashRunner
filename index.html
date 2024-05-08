@@ -35,7 +35,6 @@
         //multimedia
         var red;
         var loseSound;
-        preload();
       window.onload = function draw() {
         preload();
         //var setbut = document.getElementbyId("settings");
@@ -81,7 +80,7 @@
           }
       
         function loseScreen(){
-          loseSound.play();
+          //loseSound.play();
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "50px Arial";
