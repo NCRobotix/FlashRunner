@@ -48,7 +48,7 @@
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage == 0) {
               loseScreen();
-              stage = 2;
+              stage = 1;
               selectScreen();
           }
         });
@@ -59,7 +59,7 @@
             splash();
           }
           if(stage === 1){
-            ;
+            game();
           }
           if(stage === 2){
             loseScreen();
@@ -82,17 +82,21 @@
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
             ca.fillText("BY NC", 80, 350);
           }
-      
+
+        function game(){
+          ca.drawImage(red, 400, 500);
+        }
+        
         function loseScreen(){
           crashSound.play();
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "50px Arial";
-          ca.fillText("You died...", 180, 300);
+          ca.fillText("You died...", 240, 300);
           ca.font = "20px Arial";
-          ca.fillText("SCORE: " + score, 180, 350);
+          ca.fillText("SCORE: " + score, 320, 350);
           ca.font = "20px Arial";
-          ca.fillText("Press SPACE to restart", 180, 350);
+          ca.fillText("Press SPACE to restart", 240, 450);
         }
 
         function settings(){
@@ -102,6 +106,15 @@
           ca.fillText("MUSIC", 80, 250);
         }
 
+        function keyPressed(){
+            if(keyDown('LEFT_ARROW')){
+              p1x = p1x - 5;
+            }
+            if(keyDown('RIGHT_ARROW')){
+              p1x = p1x + 5;
+            }
+          }
+        
         function preload(){
           red = loadImage('Media/Players/RedPlayer.jpg');
           //platform = loadImage('Media/Players/RedPlayer.jpg');
