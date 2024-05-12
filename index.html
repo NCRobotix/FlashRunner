@@ -25,6 +25,7 @@
         var height = 200;
 
         //counters
+        var fps = 60;
         var score = 0;
         var lives = 1;
         var timer = 0;
@@ -89,6 +90,9 @@
             keyPressed();
             ca.drawImage(red, p1x, p1y);
           //}
+          requestAnimationFrame(game);
+          keyPressed();
+          playerPos();
         }
         
         function loseScreen(){
@@ -118,6 +122,9 @@
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
 
+        function playerPos(){
+          ca.image(red, p1x, p1y, pWidth, Height);
+        }
         function keyPressed(){
             if(keyDown('LEFT_ARROW')){
               p1x = p1x - 5;
