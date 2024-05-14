@@ -14,7 +14,7 @@ canvas {
   background-color: #FFFFFF;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 100vh;
+  height: 100%;
 }
 
 button {
