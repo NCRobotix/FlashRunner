@@ -12,7 +12,6 @@ body {
   border: solid black;
   border-width: 0px 5px 5px 5px;
   background-color: #FFFFFF;
-  position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 100vh;
