@@ -84,8 +84,9 @@
           }
 
         function game(){
-          requestAnimationFrame(update());
           document.addEventListener("keyDown", keyPressed());
+          requestAnimationFrame(update());
+          
         }
         
         function loseScreen(){
