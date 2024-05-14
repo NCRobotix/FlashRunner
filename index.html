@@ -91,7 +91,7 @@
             ca.drawImage(red, p1x, p1y, pWidth, pHeight);
           //}
           requestAnimationFrame(game());
-          document.addEventListiner("keyDown", keyPressed();
+          document.addEventListiner("keyDown", keyPressed());
         }
         
         function loseScreen(){
@@ -125,10 +125,10 @@
           ca.drawImage(red, p1x, p1y);
         }
         function keyPressed(e){
-            if(e.code === 'LEFT_ARROW'){
+            if(e.code === '37'){
               p1x = p1x - 5;
             }
-            else if(e.code === 'RIGHT_ARROW'){
+            else if(e.code === '39'){
               p1x = p1x + 5;
             }
           }
