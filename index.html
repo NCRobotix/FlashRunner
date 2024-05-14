@@ -13,7 +13,7 @@
     <div id="red" width="20" height="20"></div>
     <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
     <div id="block" width="30" height="30"></div>
-    <canvas id="gameCanvas" width="800" height="900"></canvas>
+    <canvas id="gameCanvas" width="800"></canvas>
     <script>
         var stage = 0;
         
@@ -45,6 +45,10 @@
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
+        red.src = 'Media/Players/RedPlayer.jpg';
+        red.onload = function(){
+          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
+        }
         splash();
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage == 0) {
