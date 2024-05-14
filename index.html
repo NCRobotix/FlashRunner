@@ -35,7 +35,6 @@
         
         //multimedia
         var red;
-        red.src = 'Media/Players/RedPlayer.jpg'; = new Image(30, 30)
         var yellow = new Image(30, 30);
         yellow.src = 'Media/Players/YellowPlayer.jpg';
         var crashSound = new Audio('Media/Sound/sound.wav');
@@ -46,9 +45,6 @@
         var ca = canvas.getContext("2d");
         console.log(ca);
         red.src = 'Media/Players/RedPlayer.jpg';
-        red.onload = function(){
-          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
-        }
         splash();
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage == 0) {
@@ -92,7 +88,9 @@
           ca.clearRect(0, 0, canvas.width, canvas.height);
           //while(var r = 0){
             keyPressed();
-            ca.drawImage(red, p1x, p1y, pWidth, pHeight);
+            red.onload = function(){
+              ca.drawImage(red, p1x, p1y, pWidth, pHeight);
+            }
           //}
           requestAnimationFrame(game());
           document.addEventListiner("keyDown", keyPressed());
