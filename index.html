@@ -88,9 +88,7 @@
           ca.clearRect(0, 0, canvas.width, canvas.height);
           //while(var r = 0){
             keyPressed();
-            red.onload = function playred(){
               ca.drawImage(red, p1x, p1y, pWidth, pHeight);
-            }
           //}
           requestAnimationFrame(game());
           document.addEventListiner("keyDown", keyPressed());
