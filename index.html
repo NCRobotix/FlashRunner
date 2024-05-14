@@ -52,7 +52,9 @@
               selectScreen();
           }
         if(stage === 1){
-          
+          requestAnimationFrame(update);
+          ca.clearRect(0, 0, canvas.width, canvas.height);
+          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
         }
         });
         //setbut.addEventListener('click', settings()
