@@ -51,6 +51,9 @@
               stage = 1;
               selectScreen();
           }
+        if(stage === 1){
+          
+        }
         });
         //setbut.addEventListener('click', settings()
        // );
@@ -108,14 +111,13 @@
         function update(){
           requestAnimationFrame(update);
           ca.clearRect(0, 0, canvas.width, canvas.height);
-          
           ca.drawImage(red, p1x, p1y, pWidth, pHeight);
         }
         function keyPressed(e){
-            if(e.code === "ArrowLeft"){
+            if(e.code === 37){
               p1x = p1x - 10;
             }
-            else if(e.code === "ArrowRight"){
+            else if(e.code === 39){
               p1x = p1x + 10;
             }
           }
