@@ -11,6 +11,7 @@ body {
 canvas {
   border: solid black;
   border-width: 0px 5px 5px 5px;
+  position: absolute;
   background-color: #FFFFFF;
   left: 50%;
   transform: translate(-50%, -50%);
