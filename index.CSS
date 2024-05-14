@@ -16,7 +16,6 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 95%;
 }
 
 button {
