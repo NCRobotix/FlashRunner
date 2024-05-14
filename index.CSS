@@ -25,12 +25,6 @@ button {
     font-family: cursive;
 }
 
-#settings {
-  position: absolute;
-  width: 1500px;
-  height: 700px;
-}
-
 #startScreen {
   margin: auto;
   margin-top: 50px;
@@ -79,12 +73,5 @@ button {
   25% {
     top: -4px;
   }
-}
-
-#gameOn {
-  font-size: 100px;
-  text-align: center;
-  text-shadow: 0 2px 0 limegreen, 0 1px 64px white;
-  animation: pulse 1.5s linear infinite;
 }
 
