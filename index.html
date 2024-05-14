@@ -12,7 +12,7 @@
     <div><img id="player" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="red" width="20" height="20"></div>
     <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
-    <canvas id="gameCanvas" width="800" height="906"></canvas>
+    <canvas id="gameCanvas" width="800" height="907"></canvas>
     <script>
         var stage = 0;
         
@@ -81,11 +81,7 @@
           }
 
         function game(){
-          ca.clearRect(0, 0, canvas.width, canvas.height);
-          
-          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
-          
-          requestAnimationFrame(game());
+          requestAnimationFrame(update());
           document.addEventListener("keyDown", keyPressed());
         }
         
@@ -109,8 +105,11 @@
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
 
-        function playerPos(){
-          ca.drawImage(red, p1x, p1y);
+        function update(){
+          requestAnimationFrame(update());
+          ca.clearRect(0, 0, canvas.width, canvas.height);
+          
+          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
         }
         function keyPressed(e){
             if(e.code === "ArrowLeft"){
