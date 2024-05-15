@@ -17,7 +17,7 @@
         var stage = 0;
         
         var p1x = 400;
-        var p1y = 750;
+        var p1y = 850;
         var pWidth = 30;
         var pHeight = 90;
         var width = 200;
@@ -76,7 +76,7 @@
         }
 
         function game(){
-          gameTheme.play();
+          loopTheme();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           keyPressed();
           ca.drawImage(red, p1x, p1y, 30, 30);
@@ -110,6 +110,13 @@
               p1x = p1x + 20;
             }
           }
+
+        function loopTheme(){
+          gameTheme.play();
+          setTimeOut(function(){
+            gameTheme.stop();
+          }, 376000);
+        }
         
         function preload(){
           //platform = loadImage('Media/Players/RedPlayer.jpg');
