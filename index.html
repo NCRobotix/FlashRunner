@@ -38,7 +38,6 @@
         yellow.src = 'Media/Players/YellowPlayer.jpg';
         var crashSound = new Audio('Media/Sound/sound.wav');
       window.onload = function draw() {
-        //preload();
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
@@ -76,7 +75,7 @@
 
         function game(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
-          //keyPressed();
+          keyPressed();
           ca.drawImage(red, p1x, p1y, 30, 30);
         }
         
@@ -110,7 +109,6 @@
           }
         
         function preload(){
-          //red = loadImage('Media/Players/RedPlayer.jpg');
           //platform = loadImage('Media/Players/RedPlayer.jpg');
           //landscape = loadImage('Media/Players/GreenPlayer.jpg');
           //theme = loadSound('Media/Sound/sound.wav');
