@@ -47,10 +47,17 @@
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage = 0) {
               stage = 1;
-              screenSelect();
           }
         });
-        
+        if(stage === 0){
+            splash();
+          }
+          if(stage === 1){
+            game();
+          }
+          if(stage === 2){
+            loseScreen();
+          }
         function screenSelect(){
           keyPressed();
           if(stage === 0){
