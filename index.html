@@ -100,7 +100,14 @@
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
         
-       //
+        function keyPressed(){
+            if(e.onKeyDown === "ArrowLeft"){
+              p1x = p1x - 20;
+            }
+            if(e.onKeyDown === "ArrowRight"){
+              p1x = p1x + 20;
+            }
+          }
         
         function preload(){
           red = loadImage('Media/Players/RedPlayer.jpg');
