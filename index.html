@@ -24,7 +24,6 @@
         var height = 200;
 
         //counters
-        var fps = 60;
         var score = 0;
         var lives = 1;
         var timer = 0;
@@ -40,7 +39,6 @@
         var crashSound = new Audio('Media/Sound/sound.wav');
       window.onload = function draw() {
         preload();
-        //var setbut = document.getElementbyId("settings");
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
@@ -51,8 +49,6 @@
               game();
           }
         });
-        //setbut.addEventListener('click', settings()
-       // );
         function screenSelect(){
           if(stage === 0){
             splash();
@@ -64,6 +60,7 @@
             loseScreen();
           }
         }
+        
         function splash(){
             ca.font = "50px Arial";
             ca.fillText("FLASH RUNNER", 80, 150);
@@ -74,13 +71,12 @@
             ca.fillText("DIRECTIONS", 80, 250);
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", width/2, 300);
             ca.fillText("BY NC", 80, 350);
-          }
+        }
 
         function game(){
-
             ca.clearRect(0, 0, canvas.width, canvas.height);
             keyPressed();
-            ca.drawImage(red, p1x, p1y, pWidth, pHeight);
+            ca.drawImage(red, p1x, p1y);
 
         }
         
