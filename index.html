@@ -76,10 +76,7 @@
         function game(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
           keyPressed();
-            
-          red.addEventListener("load", (e) => {
-            ca.drawImage(red, p1x, p1y);
-          });
+          ca.drawImage(red, p1x, p1y);
         }
         
         function loseScreen(){
