@@ -49,6 +49,7 @@
               game();
           }
         });
+        
         function screenSelect(){
           if(stage === 0){
             splash();
@@ -76,7 +77,7 @@
         function game(){
           ca.clearRect(0, 0, canvas.width, canvas.height);
           keyPressed();
-          ca.drawImage(red, p1x, p1y);
+          ca.drawImage(red, p1x, p1y, 30, 30);
         }
         
         function loseScreen(){
