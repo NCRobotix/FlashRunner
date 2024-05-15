@@ -75,7 +75,7 @@
 
         function game(){
             ca.clearRect(0, 0, canvas.width, canvas.height);
-            //keyPressed();
+            keyPressed();
             ca.drawImage(red, p1x, p1y);
 
         }
@@ -100,14 +100,7 @@
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
         
-        function keyPressed(){
-            if(e.Code === "ArrowLeft"){
-              p1x = p1x - 20;
-            }
-            else if(e.Code === "ArrowRight"){
-              p1x = p1x + 20;
-            }
-          }
+       //
         
         function preload(){
           red = loadImage('Media/Players/RedPlayer.jpg');
@@ -125,16 +118,13 @@ var bHeight = 70;
 var b1position = 0;
 var bSpeed = 2;
 var bDirection = -1;
-var bDistance = 100;
 
 var direction = 1;
 var velocity = 2;
 var fallingSpeed = 2;
 
 //multimedia
-var landscape;
 var platform;
-var crashSound;
 var theme;
       
     </script>
