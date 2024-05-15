@@ -108,11 +108,11 @@
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
         
-        function keyPressed(e){
-            if(e.code === 37 & p1x >= 0){
+        function keyPressed(){
+            if(event.keyCode === 37 & p1x >== 0){
               p1x = p1x - 20;
             }
-            else if(e.code === 39 & p1x <= 800){
+            else if(event.keyCode === 39 & p1x <== 800){
               p1x = p1x + 20;
             }
           }
