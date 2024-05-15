@@ -80,12 +80,11 @@
           }
 
         function game(){
-          if(gameTime === 0){
-            keyPressed();
+
             ca.clearRect(0, 0, canvas.width, canvas.height);
+            keyPressed();
             ca.drawImage(red, p1x, p1y, pWidth, pHeight);
-            
-          }
+
         }
         
         function loseScreen(){
