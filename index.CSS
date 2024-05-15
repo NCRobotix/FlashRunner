@@ -18,54 +18,10 @@ canvas {
   transform: translate(-50%, -50%);
 }
 
-button {
-    color: #CCFFCC;
-    text-align: center;
-    font-family: cursive;
-}
-
-#startScreen {
-  margin: auto;
-  margin-top: 50px;
-  position: relative;
-  width: 300px;
-  height: 200px;
-  text-align: center;
-  border: 8px solid;
-  border-radius: 10px;
-  box-shadow: 0 1px 32px white;
-  transform: rotate(0) scale(0);
-  animation: boom 1s linear;
-  animation-fill-mode: forwards;
-}
-
 @keyframes boom {
   100% {
     transform: rotate(1080deg) scale(1);
   }
-}
-
-
-#startScreen h1 {
-  position:absolute;
-  width: 100%;
-  color: #222;
-  font-size: 40px;
-  text-shadow: 0 1px 2px;
-  animation: pulse 6s linear infinite;
-}
-
-@keyframes pulse {
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-#startScreen span {
-  position: relative;
-  font-size: 18px;
-  animation: up 2s linear infinite;
-  animation-delay: 3s;
 }
 
 @keyframes up {
