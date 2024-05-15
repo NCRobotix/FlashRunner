@@ -9,7 +9,7 @@
 
   </head>
   <body>
-    <div><img id="player" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
+    <div><img id="redplayer" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="red" width="20" height="20"></div>
     <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
     <canvas id="gameCanvas" width="800" height="911"></canvas>
@@ -32,8 +32,8 @@
         var gameTime = 0;
         
         //multimedia
-        var red = new Image(40, 40);
-        red.src = 'Media/Players/RedPlayer.jpg';
+        var red = document.getElementbyId("redplayer");;
+        //red.src = 'Media/Players/RedPlayer.jpg';
         var yellow = new Image(30, 30);
         yellow.src = 'Media/Players/YellowPlayer.jpg';
         var crashSound = new Audio('Media/Sound/sound.wav');
@@ -74,10 +74,12 @@
         }
 
         function game(){
-            ca.clearRect(0, 0, canvas.width, canvas.height);
-            keyPressed();
+          ca.clearRect(0, 0, canvas.width, canvas.height);
+          keyPressed();
+            
+          red.addEventListener("load", (e) => {
             ca.drawImage(red, p1x, p1y);
-
+          });
         }
         
         function loseScreen(){
