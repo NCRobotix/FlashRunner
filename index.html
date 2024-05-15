@@ -30,7 +30,7 @@
         var timer = 0;
         var timeLimit = 60;
         var splashTime;
-        var gameTime;
+        var gameTime = 0;
         
         //multimedia
         var red = new Image(40, 40);
@@ -80,7 +80,12 @@
           }
 
         function game(){
-          document.addEventListener("keyDown", update);
+          if(gameTime === 0){
+            keyPressed();
+            ca.clearRect(0, 0, canvas.width, canvas.height);
+            ca.drawImage(red, p1x, p1y, pWidth, pHeight);
+            game();
+          }
         }
         
         function loseScreen(){
@@ -102,18 +107,13 @@
           ca.fillText("Licensed under Creative Commons: By Attribution 3.0", 80, 250);
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
         }
-
-        function update(){
-          keyPressed();
-          ca.clearRect(0, 0, canvas.width, canvas.height);
-          ca.drawImage(red, p1x, p1y, pWidth, pHeight);
-        }
+        
         function keyPressed(e){
-            if(e.code === 37){
-              p1x = p1x - 10;
+            if(e.code === 37 & p1x >= 0){
+              p1x = p1x - 20;
             }
-            else if(e.code === 39){
-              p1x = p1x + 10;
+            else if(e.code === 39 & p1x <= 800){
+              p1x = p1x + 20;
             }
           }
         
