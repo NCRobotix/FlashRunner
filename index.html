@@ -37,7 +37,7 @@
         var yellow = new Image(30, 30);
         yellow.src = 'Media/Players/YellowPlayer.jpg';
 
-        var gameTheme = new Audio('Media/Sound/Blue_Scorpion.mp3');
+        var gameTheme = new Audio('Media/Sound/BlueScorpion.mp3');
         var crashSound = new Audio('Media/Sound/sound.wav');
       window.onload = function draw() {
         var canvas = document.getElementById("gameCanvas");
@@ -76,6 +76,7 @@
         }
 
         function game(){
+          gameTheme.play();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           keyPressed();
           ca.drawImage(red, p1x, p1y, 30, 30);
