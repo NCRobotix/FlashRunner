@@ -14,8 +14,6 @@
     <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
     <canvas id="gameCanvas" width="800" height="911"></canvas>
     <script>
-        var stage = 0;
-        
         var p1x = 400;
         var p1y = 850;
         var pWidth = 30;
@@ -43,6 +41,7 @@
         var gameTheme = new Audio('Media/Sound/BlueScorpion.wav');
         var crashSound = new Audio('Media/Sound/sound.wav');
       window.onload = function draw() {
+        var stage = 0;
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
