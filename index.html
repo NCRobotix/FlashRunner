@@ -37,18 +37,7 @@
 
         var gameTheme = new Audio('Media/Sound/BlueScorpion.wav');
         var crashSound = new Audio('Media/Sound/sound.wav');
-      function screenSelect(){
-          keyPressed();
-          if(stage === 0){
-            splash();
-          }
-          if(stage === 1){
-            return game();
-          }
-          if(stage === 2){
-            loseScreen();
-          }
-        }
+      
       window.onload = function draw() {
         var stage = 0;
         var canvas = document.getElementById("gameCanvas");
@@ -58,10 +47,21 @@
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
-              screenSelect();
+              game();
           }
         });
-        
+        function screenSelect(){
+          keyPressed();
+          if(stage === 0){
+            splash();
+          }
+          if(stage === 1){
+            game();
+          }
+          if(stage === 2){
+            loseScreen();
+          }
+        }
         
         function splash(){
             ca.font = "50px Arial";
