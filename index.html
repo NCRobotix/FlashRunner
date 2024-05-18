@@ -46,7 +46,7 @@
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
-              screenSelect();
+              game();
           }
         });
         if(stage === 0){
@@ -88,6 +88,7 @@
           ca.clearRect(0, 0, canvas.width, canvas.height);
           keyPressed();
           ca.drawImage(red, p1x, p1y, 30, 30);
+          window.requestAnimationFrame(game());
         }
         
         function loseScreen(){
