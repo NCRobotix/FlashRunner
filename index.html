@@ -47,7 +47,7 @@ var canvas = document.getElementById("gameCanvas");
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
-              game();
+              selectScreen();
               
           }
         });
@@ -66,7 +66,7 @@ var canvas = document.getElementById("gameCanvas");
         }
        }
       
-        function screenSelect(){
+        function selectScreen(){
           keyPressed();
           if(stage === 0){
             splash();
@@ -94,7 +94,6 @@ var canvas = document.getElementById("gameCanvas");
         function game(){
           //gameTheme.play();
           ca.clearRect(0, 0, canvas.width, canvas.height);
-          keyPressed();
           ca.drawImage(red, p1x, p1y, 30, 30);
           window.requestAnimationFrame(game);
         }
