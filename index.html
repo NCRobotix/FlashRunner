@@ -43,11 +43,12 @@
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
+        console.log(e.code)
         splash();
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
-              console.log(e.code)
+              game();
               
           }
         });
