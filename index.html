@@ -38,10 +38,10 @@
 
         var gameTheme = new Audio('Media/Sound/BlueScorpion.wav');
         var crashSound = new Audio('Media/Sound/sound.wav');
-
-      window.onload = function draw() {
-        var canvas = document.getElementById("gameCanvas");
+var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
+      window.onload = function draw() {
+        
         console.log(ca);
         splash();
         window.addEventListener('keydown', (e) => {
