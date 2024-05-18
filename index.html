@@ -22,6 +22,7 @@
         var height = 200;
 
         //counters
+        var stage = 0;
         var score = 0;
         var lives = 1;
         var timer = 0;
@@ -39,7 +40,6 @@
         var crashSound = new Audio('Media/Sound/sound.wav');
 
       window.onload = function draw() {
-        var stage = 0;
         var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
         console.log(ca);
