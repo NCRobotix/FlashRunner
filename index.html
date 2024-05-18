@@ -67,11 +67,11 @@ var canvas = document.getElementById("gameCanvas");
        }
       
         function selectScreen(){
-          keyPressed();
           if(stage === 0){
             splash();
           }
           if(stage === 1){
+            //gameTheme.play();
             game();
           }
           if(stage === 2){
@@ -92,7 +92,7 @@ var canvas = document.getElementById("gameCanvas");
         }
 
         function game(){
-          //gameTheme.play();
+          keyPressed();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.drawImage(red, p1x, p1y, 30, 30);
           window.requestAnimationFrame(game);
