@@ -10,8 +10,7 @@
   </head>
   <body>
     <div><img id="redplayer" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
-    <div id="reds" width="20" height="20"></div>
-    <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
+    <div class="setting-button"><img id="settings" src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
     <canvas id="gameCanvas" width="750" height="900"></canvas>
     <script>
         var p1x = 390;
@@ -90,7 +89,7 @@
         function game(){
 
           ca.clearRect(0, 0, canvas.width, canvas.height);
-          ca.drawImage(green, cWidth, cHeight, 30, 30);
+          ca.drawImage(green, cWidth-100, cHeight-100, 30, 30);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
         }
