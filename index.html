@@ -37,6 +37,7 @@
         yellow.src = 'Media/Players/YellowPlayer.jpg';
 
         var gameTheme = new Audio('Media/Sound/BlueScorpion.mp3');
+        gameTheme.loop = true;
         var crashSound = new Audio('Media/Sound/sound.wav');
 var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
@@ -46,17 +47,11 @@ var canvas = document.getElementById("gameCanvas");
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
+              gameTheme.play();
               game();
               
           }
         });
-
-        function loopTheme(){
-          gameTheme.play();
-          setTimeOut(function(){
-            gameTheme.stop();
-          }, 376000);
-        }
         
         function preload(){
           //red = loadImage('Media/Players/RedPlayer.jpg');
@@ -104,6 +99,7 @@ var canvas = document.getElementById("gameCanvas");
         }
         
         function loseScreen(){
+          gameTheme.stop();
           crashSound.play();
           //image(landscape, 80, height/2, width, height);
           ca.clearRect(0, 0, canvas.width, canvas.height);
