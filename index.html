@@ -12,6 +12,7 @@
     <div><img id="redplayer" src="Media/Players/RedPlayer.jpg" width="30" height="30"></div>
     <div id="reds" width="20" height="20"></div>
     <div id="settings" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
+    <div id="credits" class="setting-button"><img src="Media/Players/YellowPlayer.jpg" width="30" height="30"></div>
     <canvas id="gameCanvas" width="750" height="900"></canvas>
     <script>
         var p1x = 390;
@@ -39,8 +40,10 @@
         var gameTheme = new Audio('Media/Sound/BlueScorpion.mp3');
         gameTheme.loop = true;
         var crashSound = new Audio('Media/Sound/sound.wav');
-var canvas = document.getElementById("gameCanvas");
+      
+        var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
+        var creditsBt = document.getElementbyId("credits");
       window.onload = function draw() {
         console.log(ca);
         splash();
@@ -86,13 +89,14 @@ var canvas = document.getElementById("gameCanvas");
             ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", 40, 400);
             ca.fillText("PRESS", 80, 450);
 
-            ca.drawImage(yellow, 600, 600, 60, 60);
-            yellow.onclick = function(){
+            ca.drawImage(creditsBt, 600, 600, 60, 60);
+            creditsBt.onclick = function(){
               credits();
             }
         }
 
         function game(){
+          gameTheme.volume = .5;
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
@@ -112,11 +116,13 @@ var canvas = document.getElementById("gameCanvas");
         }
         
         function credits(){
+          ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.font = "40px Arial";
           ca.fillText("Blue Scorpion", 80, 150);
           ca.fillText("Kevin MacLeod (incompetech.com)", 80, 200);
           ca.fillText("Licensed under Creative Commons: By Attribution 3.0", 80, 250);
           ca.fillText("http://creativecommons.org/licenses/by/3.0/", 80, 300);
+          
         }
         
         function keyPressed(){
