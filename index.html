@@ -88,8 +88,10 @@ var canvas = document.getElementById("gameCanvas");
   
             ca.font = "20px Arial";
             ca.fillText("DIRECTIONS", 80, 350);
-            ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", 60, 400);
+            ca.fillText("DODGE THE OBSTACLES BY MOVING WITH THE RIGHT AND LEFT KEYS", 40, 400);
             ca.fillText("PRESS", 80, 450);
+
+            ca.drawImage(yellow, 600, 600, 60, 60);
         }
 
         function game(){
