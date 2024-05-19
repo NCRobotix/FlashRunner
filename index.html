@@ -21,6 +21,8 @@
         var pHeight = 90;
         var width = 200;
         var height = 200;
+        var cWidth = canvas.width;
+        var cHeight = canvas.height;
 
         //counters
         var stage = 0;
@@ -36,6 +38,8 @@
         red.src = 'Media/Players/RedPlayer.jpg';
         var yellow = new Image(30, 30);
         yellow.src = 'Media/Players/YellowPlayer.jpg';
+        var green = new Image;
+        green.src = 'Media/Players/GreenPlayer.jpg';
 
         var gameTheme = new Audio('Media/Sound/BlueScorpion.mp3');
         gameTheme.loop = true;
@@ -98,6 +102,7 @@
         function game(){
           gameTheme.volume = .5;
           ca.clearRect(0, 0, canvas.width, canvas.height);
+          ca.drawImage(green, cWidth, cHeight, 30, 30);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
         }
@@ -133,6 +138,10 @@
               p1x = p1x + 20;
             }
           }
+
+        function enemyMove(){
+          ca.drawImage(green, cWidth, cHeight, 30, 30);
+        }
       }
 
 //box;
