@@ -35,7 +35,7 @@
         //multimedia
         var red = new Image;
         red.src = 'Media/Players/RedPlayer.jpg';
-        var yellow = new Image(30, 30);
+        var yellow = new Image;
         yellow.src = 'Media/Players/YellowPlayer.jpg';
         var green = new Image;
         green.src = 'Media/Players/GreenPlayer.jpg';
@@ -57,15 +57,7 @@
               
           }
         });
-        
-        function preload(){
-          //red = loadImage('Media/Players/RedPlayer.jpg');
-          //platform = loadImage('Media/Players/RedPlayer.jpg');
-          //landscape = loadImage('Media/Players/GreenPlayer.jpg');
-          //theme = loadSound('Media/Sound/sound.wav');
-        }
        
-      
         function selectScreen(){
           if(stage === 0){
             splash();
@@ -133,10 +125,6 @@
               p1x = p1x + 20;
             }
           }
-
-        function enemyMove(){
-          ca.drawImage(green, cWidth, cHeight, 30, 30);
-        }
       }
 
 //box;
