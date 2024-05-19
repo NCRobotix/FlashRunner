@@ -92,6 +92,9 @@ var canvas = document.getElementById("gameCanvas");
             ca.fillText("PRESS", 80, 450);
 
             ca.drawImage(yellow, 600, 600, 60, 60);
+            yellow.onclick = function(){
+              credits();
+            }
         }
 
         function game(){
