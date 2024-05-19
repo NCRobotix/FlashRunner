@@ -71,7 +71,6 @@ var canvas = document.getElementById("gameCanvas");
             splash();
           }
           if(stage === 1){
-            //gameTheme.play();
             keyPressed();
             game();
           }
@@ -95,7 +94,7 @@ var canvas = document.getElementById("gameCanvas");
         }
 
         function game(){
-          gameTheme.play();
+          loopTheme();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
