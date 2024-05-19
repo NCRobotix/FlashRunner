@@ -42,7 +42,6 @@ var canvas = document.getElementById("gameCanvas");
         var ca = canvas.getContext("2d");
       window.onload = function draw() {
         console.log(ca);
-        gameTheme.play();
         splash();
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
@@ -94,7 +93,7 @@ var canvas = document.getElementById("gameCanvas");
         }
 
         function game(){
-          
+          gameTheme.play();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
