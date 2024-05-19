@@ -72,6 +72,7 @@ var canvas = document.getElementById("gameCanvas");
           }
           if(stage === 1){
             keyPressed();
+            loopTheme();
             game();
           }
           if(stage === 2){
@@ -94,7 +95,6 @@ var canvas = document.getElementById("gameCanvas");
         }
 
         function game(){
-          loopTheme();
           ca.clearRect(0, 0, canvas.width, canvas.height);
           ca.drawImage(red, p1x, p1y, 30, 30);
           //ca.requestAnimationFrame(game);
