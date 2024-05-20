@@ -51,12 +51,15 @@
         window.addEventListener('keydown', (e) => {
           if (e.code === "Space" & stage === 0) {
               stage = 1;
-              gameTheme.play();
               game();
               
           }
         });
-       
+       window.addEventListener('keydown', (e) => {
+          if (e.code === "ArrowLeft" & stage === 1) {
+              keyPressed(e);
+          }
+        });
         function selectScreen(){
           if(stage === 0){
             splash();
@@ -116,14 +119,14 @@
           
         }
         
-        function keyPressed(){
+        function keyPressed(e){
             if(e.code === "ArrowLeft"){
               p1x = p1x - 20;
             }
             if(e.code === "ArrowRight"){
               p1x = p1x + 20;
             }
-          }
+        }
       }
 
 //box;
