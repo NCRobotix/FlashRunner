@@ -130,13 +130,16 @@
             }
         }
 
-        class Player(){
-          this.x = posx;
-          this.y = posy;
-        }
-        
       }
-
+      
+      class Player(){
+        this.x = playerx;
+        this.y = playery;
+        
+        pos(x){ //position of player
+          return playerx - x;
+        }
+      }
 //box;
 var b1x = 200;
 var b1y = 300;
